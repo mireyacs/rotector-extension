@@ -88,11 +88,11 @@ Want to learn more about the Rotector project? Visit their website at **[rotecto
 </p>
 
 <p align="center">
-  <a href="https://chromewebstore.google.com/detail/rotector/ilegibonffbmecfchpcmcmknocboagan">
-    <img src="https://img.shields.io/chrome-web-store/v/ilegibonffbmecfchpcmcmknocboagan?style=flat-square&color=4a92e1&label=chrome%20extension" alt="Chrome Web Store">
+  <a href="https://chromewebstore.google.com/detail/rotector/#">
+    <img src="https://img.shields.io/chrome-web-store/v/#?style=flat-square&color=4a92e1&label=chrome%20extension" alt="Chrome Web Store">
   </a>
-  <a href="https://addons.mozilla.org/en-US/firefox/addon/rotector/">
-    <img src="https://img.shields.io/amo/v/rotector?style=flat-square&color=4a92e1&label=firefox%20extension" alt="Firefox Add-ons">
+  <a href="https://addons.mozilla.org/en-US/firefox/addon/#/">
+    <img src="https://img.shields.io/amo/v/#?style=flat-square&color=4a92e1&label=firefox%20extension" alt="Firefox Add-ons">
   </a>
 </p>
 
