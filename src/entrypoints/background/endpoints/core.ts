@@ -18,8 +18,7 @@ import {
 
 // Check the status of a single user by ID
 export async function checkUserStatus(
-	userId: string | number,
-	clientId?: string
+	userId: string | number
 ): Promise<UserStatus> {
 	const sanitizedUserId = validateEntityId(userId);
 	const excludeInfo = await getExcludeAdvancedInfoSetting();
@@ -28,7 +27,7 @@ export async function checkUserStatus(
 	params.set('excludeInfo', excludeInfo.toString());
 
 	const url = `${API_CONFIG.ENDPOINTS.USER_CHECK}/${sanitizedUserId}?${params.toString()}`;
-	const response = await makeHttpRequest(url, { method: 'GET', clientId });
+	const response = await makeHttpRequest(url, { method: 'GET' });
 
 	const data = extractResponseData<UserStatus>(response);
 
@@ -41,13 +40,12 @@ export async function checkUserStatus(
 
 // Check the status of a single group by ID
 export async function checkGroupStatus(
-	groupId: string | number,
-	clientId?: string
+	groupId: string | number
 ): Promise<GroupStatus> {
 	const sanitizedGroupId = validateEntityId(groupId);
 
 	const url = `${API_CONFIG.ENDPOINTS.GROUP_CHECK}/${sanitizedGroupId}`;
-	const response = await makeHttpRequest(url, { method: 'GET', clientId });
+	const response = await makeHttpRequest(url, { method: 'GET' });
 
 	const data = extractResponseData<GroupStatus>(response);
 
@@ -61,7 +59,6 @@ export async function checkGroupStatus(
 // Check the status of multiple users in a batch request
 export async function checkMultipleUsers(
 	userIds: Array<string | number>,
-	clientId?: string,
 	lookupContext?: string
 ): Promise<UserStatus[]> {
 	const sanitizedUserIds = processBatchEntityIds(userIds);
@@ -75,7 +72,6 @@ export async function checkMultipleUsers(
 	const response = await makeHttpRequest(API_CONFIG.ENDPOINTS.MULTIPLE_USER_CHECK, {
 		method: 'POST',
 		body: JSON.stringify(requestBody),
-		clientId,
 		lookupContext
 	});
 
@@ -91,8 +87,7 @@ export async function checkMultipleUsers(
 
 // Check the status of multiple groups in a batch request
 export async function checkMultipleGroups(
-	groupIds: Array<string | number>,
-	clientId?: string
+	groupIds: Array<string | number>
 ): Promise<GroupStatus[]> {
 	const sanitizedGroupIds = processBatchEntityIds(groupIds);
 
@@ -102,8 +97,7 @@ export async function checkMultipleGroups(
 
 	const response = await makeHttpRequest(API_CONFIG.ENDPOINTS.GROUP_CHECK, {
 		method: 'POST',
-		body: JSON.stringify(requestBody),
-		clientId
+		body: JSON.stringify(requestBody)
 	});
 
 	const responseData = extractResponseData<Record<string, GroupStatus>>(response);
@@ -122,8 +116,7 @@ export async function queueUser(
 	inappropriateOutfit: boolean = false,
 	inappropriateProfile: boolean = false,
 	inappropriateFriends: boolean = false,
-	inappropriateGroups: boolean = false,
-	clientId?: string
+	inappropriateGroups: boolean = false
 ): Promise<QueueResult> {
 	const sanitizedUserId = validateEntityId(userId);
 
@@ -137,8 +130,7 @@ export async function queueUser(
 
 	const response = await makeHttpRequest(API_CONFIG.ENDPOINTS.QUEUE_USER, {
 		method: 'POST',
-		body: JSON.stringify(requestBody),
-		clientId
+		body: JSON.stringify(requestBody)
 	});
 
 	return response as QueueResult;
@@ -203,10 +195,9 @@ export async function getStatistics(): Promise<Statistics> {
 }
 
 // Get queue limits for current IP
-export async function getQueueLimits(clientId?: string): Promise<QueueLimitsData> {
+export async function getQueueLimits(): Promise<QueueLimitsData> {
 	const response = await makeHttpRequest(API_CONFIG.ENDPOINTS.QUEUE_LIMITS, {
-		method: 'GET',
-		clientId
+		method: 'GET'
 	});
 
 	return extractResponseData<QueueLimitsData>(response);

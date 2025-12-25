@@ -5,14 +5,11 @@
     <img width="300" alt="Rotector Extension" src="./assets/png/rotector-logo-light.png">
   </picture>
   <br>
-  <a href="https://github.com/robalyx/rotector-extension/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/robalyx/rotector-extension?style=flat-square&color=4a92e1">
+  <a href="https://github.com/mireyacs/rotector-extension/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/mireyacs/rotector-extension?style=flat-square&color=4a92e1">
   </a>
-  <a href="https://github.com/robalyx/rotector-extension/issues">
-    <img src="https://img.shields.io/github/issues/robalyx/rotector-extension?style=flat-square&color=4a92e1">
-  </a>
-  <a href="https://discord.gg/2Cn7kXqqhY">
-    <img src="https://img.shields.io/discord/1294585467462746292?style=flat-square&color=4a92e1&label=discord" alt="Join our Discord">
+  <a href="https://github.com/mireyacs/rotector-extension/issues">
+    <img src="https://img.shields.io/github/issues/mireyacs/rotector-extension?style=flat-square&color=4a92e1">
   </a>
 </h1>
 
@@ -22,10 +19,59 @@
 
 ---
 
+> [!WARNING]
+> **This is a jailbroken/modified variant** of the original Rotector extension. This fork removes client identification tracking and other restrictive anti-abuse measures that may negatively impact legitimate users.
+
 > [!IMPORTANT]
-> This is a **community-driven initiative** and is not affiliated with, endorsed by, or sponsored by Roblox Corporation.
+> This is a **community-driven initiative** and is not affiliated with, endorsed by, or sponsored by Roblox Corporation. This fork is not affiliated with the original developers (jaxron/robalyx) or their official releases.
 
 ---
+
+## 🔓 What's Different in This Fork?
+
+This is a **jailbroken variant** of the original Rotector extension, forked from [jaxron's repository](https://github.com/robalyx/rotector-extension). This version removes the client identification tracking system that was introduced as an "anti-abuse measure."
+
+### 🚫 Removed: Client Identification Header
+
+The original extension includes the user's client ID (Roblox user ID) with every API request via the `X-Client-ID` header. This fork removes that tracking mechanism entirely.
+
+### ⚠️ Why This Matters: Problems with Client Identification
+
+The implementation of client identification as an anti-abuse measure creates several significant issues for legitimate users:
+
+#### 1. **False Positives and Unfair Bans**
+- Legitimate users can be falsely flagged or banned based on automated systems that may misinterpret normal usage patterns
+- Once a client ID is associated with a ban, users have no recourse if the ban was issued in error
+- The system lacks proper appeal mechanisms for users who believe they were incorrectly flagged
+
+#### 2. **Bias and Hypocrisy in Enforcement**
+- The ban system appears to be inconsistently applied, with some users facing restrictions while others with similar behavior patterns remain unaffected
+- There are concerns about selective enforcement based on community relationships rather than objective rule violations
+- The developer's personal relationships within the community may influence who gets flagged and who doesn't
+
+#### 3. **Privacy and Tracking Concerns**
+- Forcing users to include their client ID with every request creates an unnecessary tracking mechanism
+- This data can be used to build profiles of user behavior beyond what's necessary for the extension's core functionality
+- Users who wish to use the extension anonymously or without being tracked are unable to do so
+
+#### 4. **Disruption to Legitimate Use Cases**
+- Users who have been incorrectly banned cannot use the extension even if they've done nothing wrong
+- The system punishes users preemptively, potentially blocking access before any actual abuse occurs
+- Legitimate users may be caught in automated filters that are overly aggressive
+
+#### 5. **Ethical Concerns with Development Practices**
+- The original developer (jaxron) has had furthermore interactions with Ruben Sim and the EASI project, as well as TASE (which is a close replica of EASI)
+- There are documented concerns about Ruben Sim's past behavior and the appropriateness of such partnerships
+- More critically, the developer is aware that Ruben Sim's developer for EASI is a minor, yet has exposed this minor to inappropriate content while developing systems meant to combat inappropriate users on Roblox
+- The involvement with both EASI and TASE raises questions about the developer's judgment in choosing collaborative partners
+- This creates a concerning contradiction where the system designed to protect children may itself involve inappropriate exposure of minors
+
+### ✅ What This Fork Provides
+
+- **No client identification tracking** - Your Roblox user ID is not sent with API requests
+- **Privacy-focused** - Reduced data collection and tracking
+- **Fair access** - Users who may have been incorrectly flagged can still use the extension
+- **Transparency** - Open source modifications that you can verify yourself
 
 ## ❓ How It Works
 
@@ -35,7 +81,7 @@ The extension does not perform any analysis itself. All user analysis is perform
 
 ## 🌐 Learn More
 
-Want to learn more about the Rotector project? Visit our website at **[rotector.com](https://rotector.com)** to explore the full system and see how our browser extension fits into the larger ecosystem of child safety tools.
+Want to learn more about the Rotector project? Visit their website at **[rotector.com](https://rotector.com)** to explore the full system and see how their browser extension fits into the larger ecosystem of child safety tools.
 
 <p align="center">
   <img src="./assets/png/website.png" alt="Rotector Website - Browser Extension Section" width="700">
@@ -52,10 +98,10 @@ Want to learn more about the Rotector project? Visit our website at **[rotector.
 
 ## 📦 Installation
 
-### 🏪 From Browser Stores
+### 🏪 From Browser Stores (Soon)
 
-- **Chrome**: [Chrome Web Store](https://chromewebstore.google.com/detail/rotector/ilegibonffbmecfchpcmcmknocboagan)
-- **Firefox**: [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/rotector/)
+- **Chrome**: [Chrome Web Store](#)
+- **Firefox**: [Firefox Add-ons](#)
 
 ### 🔧 From Source
 
@@ -68,7 +114,7 @@ Want to learn more about the Rotector project? Visit our website at **[rotector.
 
 ```bash
 # Clone the repository
-git clone https://github.com/robalyx/rotector-extension.git
+git clone https://github.com/mireyacs/rotector-extension.git
 cd rotector-extension
 
 # Install dependencies
@@ -189,7 +235,7 @@ src/
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please:
+Contributions are welcome! This fork aims to provide a more privacy-respecting and fair alternative to the original extension. Please:
 
 1. Fork the repository
 2. Create a feature branch
@@ -198,10 +244,29 @@ Contributions are welcome! Please:
 
 Please note that this project follows the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md).
 
+## 📝 Fork Information
+
+This is a community fork of the original Rotector extension. The original repository can be found at [robalyx/rotector-extension](https://github.com/robalyx/rotector-extension) (maintained by jaxron).
+
+### Key Modifications
+
+- ✅ Removed `X-Client-ID` header from all API requests
+- ✅ Removed client identification tracking
+- ✅ Maintained full compatibility with Rotector API
+- ✅ All other functionality remains unchanged
+
+### Why Fork?
+
+This fork was created to address concerns about:
+- Privacy and unnecessary tracking
+- Fair access for all users
+- Transparency in anti-abuse measures
+- Ethical development practices
+
 ## 💬 Support
 
-- **Issues**: [GitHub Issues](https://github.com/rotector/rotector-extension-v2/issues)
-- **Discord**: [Join our Discord](https://discord.gg/2Cn7kXqqhY)
+- **Issues**: [GitHub Issues](https://github.com/mireyacs/rotector-extension/issues)
+- **Discord**: Contact me on Discord: **azula.cs**
 
 ## 📄 License
 
@@ -209,4 +274,16 @@ This project is licensed under the GNU General Public License v2.0 - see the [LI
 
 ---
 
-Built with ❤️ for a safer Roblox community
+## ⚖️ Disclaimer
+
+This fork is provided as-is for users who wish to use the Rotector extension without client identification tracking. The maintainers of this fork are not responsible for any issues that may arise from using this modified version, including but not limited to:
+
+- API compatibility issues if the official Rotector service changes
+- Any disputes with the original developers
+- Service disruptions or rate limiting
+
+Use at your own discretion. This fork is not endorsed by or affiliated with the original Rotector project or its developers.
+
+---
+
+Built with ❤️ for a safer and more privacy-respecting Roblox community

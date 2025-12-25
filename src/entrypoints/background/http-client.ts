@@ -88,7 +88,6 @@ interface HttpRequestOptions extends RequestInit {
 	retryDelay?: number;
 	customApi?: CustomApiConfig;
 	requireAuth?: boolean;
-	clientId?: string;
 	lookupContext?: string;
 }
 
@@ -104,7 +103,6 @@ export async function makeHttpRequest(
 		retryDelay = API_CONFIG.RETRY_DELAY,
 		customApi,
 		requireAuth = false,
-		clientId,
 		lookupContext,
 		...fetchOptions
 	} = options;
@@ -137,11 +135,6 @@ export async function makeHttpRequest(
 				throw new Error('Extension not authenticated. Please login with Discord.');
 			}
 			headers.set('X-Extension-UUID', uuid);
-		}
-
-		// Add client ID header for integrity verification
-		if (clientId) {
-			headers.set('X-Client-ID', clientId);
 		}
 
 		// Add lookup context header for friend lookups
