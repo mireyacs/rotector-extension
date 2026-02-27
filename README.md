@@ -15,6 +15,7 @@
 
 <p align="center">
   <em>A browser extension that integrates with the <a href="https://github.com/robalyx/rotector">Rotector</a> system to help identify inappropriate users on Roblox.</em>
+  <em>This privacy-focused fork has been discontinued and archived in favor of an upcoming scratch made extension bundling in the Rotector and ZeroTolerance database.</em>
 </p>
 
 ---
